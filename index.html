@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffee Price Watch – practice page</title>
+  <style>
+    :root { --ink: #15294A; --muted: #5F6374; --line: #D5DCE6; --panel: #EAEFF9; --accent: #1A7A7A; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #fff; }
+    header { background: var(--ink); color: #fff; padding: 20px 16px; }
+    header h1 { margin: 0; font-size: 26px; }
+    main { max-width: 900px; margin: 0 auto; padding: 16px; }
+    .notice { background: var(--panel); border-left: 4px solid var(--accent); padding: 12px 14px; margin: 16px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0 24px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 8px 6px; text-align: left; font-size: 15px; }
+    th { background: var(--panel); }
+    td.price { text-align: right; font-variant-numeric: tabular-nums; }
+    .updated { color: var(--muted); font-size: 14px; }
+    @media (max-width: 600px) { th, td { font-size: 13px; padding: 6px 4px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Coffee Price Watch</h1>
+    <p>Retail prices for coffee beans and kit, checked every week</p>
+  </header>
+  <main>
+    <div class="notice" id="practice-notice">
+      <strong>A practice page for learning web scraping.</strong> The companies and prices on this page are fictional, made for the
+      Virtavis Learning course <em>Python for Data Analysis</em>. You may scrape this page for learning. Real websites have their own
+      terms of use – always read them, and check the site's robots.txt, before you scrape.
+    </div>
+
+    <p class="updated">Last updated: <span id="last-updated">5 January 2026</span></p>
+
+    <h2 id="beans">Coffee beans</h2>
+    <table class="prices" id="bean-prices">
+      <thead>
+        <tr><th>Product</th><th>Size</th><th>Retailer</th><th>Price</th><th>In stock</th></tr>
+      </thead>
+      <tbody>
+        <tr class="item"><td class="product">House blend beans</td><td class="size">250g</td><td class="retailer">Thistledown Roasters</td><td class="price">£7.95</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">House blend beans</td><td class="size">250g</td><td class="retailer">Quayside Coffee Works</td><td class="price">£6.99</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">House blend beans</td><td class="size">250g</td><td class="retailer">Brindle &amp; Moss</td><td class="price">£8.25</td><td class="stock">No</td></tr>
+        <tr class="item"><td class="product">House blend beans</td><td class="size">1kg</td><td class="retailer">Thistledown Roasters</td><td class="price">£22.50</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">House blend beans</td><td class="size">1kg</td><td class="retailer">Quayside Coffee Works</td><td class="price">£19.99</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">House blend beans</td><td class="size">1kg</td><td class="retailer">Brindle &amp; Moss</td><td class="price">£23.00</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Espresso beans</td><td class="size">250g</td><td class="retailer">Thistledown Roasters</td><td class="price">£8.50</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Espresso beans</td><td class="size">250g</td><td class="retailer">Quayside Coffee Works</td><td class="price">£7.49</td><td class="stock">No</td></tr>
+        <tr class="item"><td class="product">Espresso beans</td><td class="size">250g</td><td class="retailer">Brindle &amp; Moss</td><td class="price">£8.75</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Decaf beans</td><td class="size">250g</td><td class="retailer">Thistledown Roasters</td><td class="price">£8.95</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Decaf beans</td><td class="size">250g</td><td class="retailer">Quayside Coffee Works</td><td class="price">£7.99</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Single origin beans (Brazil)</td><td class="size">250g</td><td class="retailer">Brindle &amp; Moss</td><td class="price">£9.50</td><td class="stock">Yes</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="kit">Brewing kit</h2>
+    <table class="prices" id="kit-prices">
+      <thead>
+        <tr><th>Product</th><th>Size</th><th>Retailer</th><th>Price</th><th>In stock</th></tr>
+      </thead>
+      <tbody>
+        <tr class="item"><td class="product">Burr grinder</td><td class="size">–</td><td class="retailer">Thistledown Roasters</td><td class="price">£119.00</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Burr grinder</td><td class="size">–</td><td class="retailer">Quayside Coffee Works</td><td class="price">£99.00</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Burr grinder</td><td class="size">–</td><td class="retailer">Brindle &amp; Moss</td><td class="price">£135.00</td><td class="stock">No</td></tr>
+        <tr class="item"><td class="product">Cafetière</td><td class="size">8 cup</td><td class="retailer">Thistledown Roasters</td><td class="price">£27.00</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Cafetière</td><td class="size">8 cup</td><td class="retailer">Quayside Coffee Works</td><td class="price">£24.50</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Pour-over dripper</td><td class="size">–</td><td class="retailer">Brindle &amp; Moss</td><td class="price">£18.00</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Travel mug</td><td class="size">350ml</td><td class="retailer">Quayside Coffee Works</td><td class="price">£14.99</td><td class="stock">Yes</td></tr>
+        <tr class="item"><td class="product">Travel mug</td><td class="size">350ml</td><td class="retailer">Brindle &amp; Moss</td><td class="price">£16.50</td><td class="stock">Yes</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
